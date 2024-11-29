@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block title %}form{% endblock title %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        select, button {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mental Health Prediction Form</h1>
+        <form id="predictionForm">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="self_employed">Are you self-employed?</label>
+            <select id="self_employed" name="self_employed">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="family_history">Family History of Mental Health Issues:</label>
+            <select id="family_history" name="family_history">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="treatment">Have you sought treatment for mental health issues?</label>
+            <select id="treatment" name="treatment">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="work_interfere">How often does mental health interfere with your work?</label>
+            <select id="work_interfere" name="work_interfere">
+                <option value="Often">Often</option>
+                <option value="Sometimes">Sometimes</option>
+                <option value="Rarely">Rarely</option>
+                <option value="Never">Never</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="predictionResult" class="result">
+            <strong>Prediction:</strong>
+            <p id="predictionText">Your result will be shown here.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code to handle form submission and display prediction
+        document.getElementById("predictionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            // Collecting form values
+            const gender = document.getElementById("gender").value;
+            const selfEmployed = document.getElementById("self_employed").value;
+            const familyHistory = document.getElementById("family_history").value;
+            const treatment = document.getElementById("treatment").value;
+            const workInterfere = document.getElementById("work_interfere").value;
+
+            // Logic to determine mental health prediction (this is just a simple example)
+            let prediction = "Unknown";
+
+            // Simple rule-based prediction (just for illustration purposes)
+            if (treatment === "Yes" && familyHistory === "Yes") {
+                prediction = "High risk of mental health issues.";
+            } else if (workInterfere === "Often") {
+                prediction = "Moderate risk of mental health issues.";
+            } else {
+                prediction = "Low risk of mental health issues.";
+            }
+
+            // Display the prediction
+            document.getElementById("predictionResult").style.display = "block";
+            document.getElementById("predictionText").textContent = prediction;
+        });
+    </script>
+</body>
+</html>
+
+{% endblock body %}

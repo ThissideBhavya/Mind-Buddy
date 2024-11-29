@@ -1,0 +1,276 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>“Inhale the future. Exhale the past.”</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        /* Header */
+        header {
+            background-color: #004d99;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo img {
+            max-height: 50px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+        }
+
+        .hero .cta-button {
+            background-color: #007bff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        /* About Us Section */
+        .about {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #e9ecef;
+        }
+
+        .about img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Resources Section */
+        .resources {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .resource-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .resource-card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            width: 30%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .resource-card h3 {
+            margin-top: 15px;
+            font-size: 22px;
+        }
+
+        /* Latest Articles Section */
+        .latest-articles {
+            padding: 40px 20px;
+            background-color: #f7f7f7;
+        }
+
+        .articles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .articles article {
+            background-color: #fff;
+            padding: 20px;
+            width: 30%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CTA Section */
+        .cta {
+            background-color: #004d99;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta .cta-button {
+            background-color: #ff5733;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .social-media a {
+            color: white;
+            margin: 0 10px;
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .resource-card {
+                width: 45%;
+            }
+
+            .articles article {
+                width: 45%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+                padding: 50px 20px;
+            }
+
+            .cta .cta-button {
+                padding: 12px 25px;
+            }
+
+            .resource-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .articles article {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bG9nbyUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D" alt="Mental Health Support Logo">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('hero-image.jpg'); background-size: cover; background-position: center; color: black; text-align: center; padding: 100px 20px;">
+        <div class="hero-content">
+            <h1 style="color: black;">Welcome to Mental Health Support</h1>
+            <p style="color: black;">Your journey to mental well-being starts here. We're here to help.</p>
+            <a href="http://127.0.0.1:8000/form" class="cta-button" style="background-color: #007bff; padding: 15px 30px; border-radius: 5px; font-size: 18px; text-decoration: none; color: white;">Explore Questionnaire</a>
+        </div>
+    </section>
+    
+
+    <!-- About Us Section -->
+    <section class="about">
+        <h2>About Us</h2>
+        <p>Our mission is to provide accessible mental health resources and support to help individuals lead healthier, happier lives.</p>
+        <img src="https://i.pinimg.com/736x/af/79/c2/af79c241e25a2335287fff1774697bed.jpg" class="img-fluid"  style="width: 100%; height: 300%; alt="About Us Image">
+    </section>
+
+    <!-- Featured Resources Section -->
+    <section id="resources" class="resources">
+        <h2>Featured Resources</h2>
+        <div class="resource-cards">
+            <div class="resource-card">
+                <h3>Therapy Options</h3>
+                <p>Explore therapy resources, from in-person to online options.</p>
+                <a href="#https://r.search.yahoo.com/_ylt=AwrPpkxP7EhnrQIAgxe7HAx.;_ylu=Y29sbwNzZzMEcG9zAzMEdnRpZAMEc2VjA3Ny/RV=2/RE=1734041935/RO=10/RU=https%3a%2f%2fwww.mindbodygreen.com%2farticles%2ftypes-of-therapy/RK=2/RS=Ttfgi5UgNZhl4_dcP.aXh3W1P4Q-">Learn More</a>
+            </div>
+            <div class="resource-card">
+                <h3>Self-Care Tips</h3>
+                <p>Discover helpful tips for improving your mental well-being.</p>
+                <a href="#https://r.search.yahoo.com/_ylt=AwrKFZ6N7EhnDwIAhxe7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1734041998/RO=10/RU=https%3a%2f%2finnovativeresources.org%2fcounsellors%2f/RK=2/RS=hBt1KB12RW6Iua0rs83TWbRgPIc-">Learn More</a>
+            </div>
+            <div class="resource-card">
+                <img src="support-groups.jpg" alt="Support Groups">
+                <h3>Support Groups</h3>
+                <p>Join a community of people who understand your struggles.</p>
+                <a href="#https://r.search.yahoo.com/_ylt=Awrx_8e77EhnKwIAh2m7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1734042043/RO=10/RU=https%3a%2f%2fthemindclan.com%2fsharing_spaces%2f/RK=2/RS=P4Hm48sw9seC7XXpzY3v0Onhu3I-">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles Section -->
+    <section class="latest-articles">
+        <h2>Latest Articles</h2>
+        <div class="articles">
+            <article>
+                <h3>How to Manage Anxiety</h3>
+                <p>Learn techniques to reduce anxiety and promote calmness.</p>
+                <a href="#https://r.search.yahoo.com/_ylt=Awrx.WiQ5EhnKAIAmru7HAx.;_ylu=Y29sbwNzZzMEcG9zAzIEdnRpZAMEc2VjA3Ny/RV=2/RE=1734039952/RO=10/RU=https%3a%2f%2fwww.healthline.com%2fhealth%2fhow-to-calm-anxiety/RK=2/RS=WxHfYovuGpfLfitpE6ymRcGHuXA-">Read More</a>
+            </article>
+            <article>
+                <h3>The Importance of Therapy</h3>
+                <p>Why therapy is a valuable tool for mental health improvement.</p>
+                <a href="#https://r.search.yahoo.com/_ylt=AwrKBR1C5khnWAIA7y67HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1734040386/RO=10/RU=https%3a%2f%2fpositivepsychology.com%2fwhy-counseling-is-important%2f/RK=2/RS=fac.PQ6_1KrQQAy_aMhaMK7B1N8-">Read More</a>
+            </article>
+            <article>
+                <h3>Mindfulness for Beginners</h3>
+                <p>Start your mindfulness practice today for improved focus and relaxation.</p>
+                <a href="https://r.search.yahoo.com/rdclks/dWU9MDFuYnVvdGpraHBqZyZ1dD0xNzMyODMwODMyNjAxJnVvPTgyMjU3NTkyMjg2MjA2Jmx0PTImcz0xJmVzPVZSX0V4RFRPNHlQNDdCbzE1b2lMcXJobGVfenI4WFhMRzI2VTh1anV4WkxhV09WOXlzb1hKcVlIbW9MQmFWOEUzUkg2RUdIZ295Y0QwZy0t/RV=2/RE=1735422833/RO=14/RU=https%3a%2f%2fwww.bing.com%2faclick%3fld%3de8lM0TYf3OJXzvPNkwC5HFdzVUCUyx2shxkumMf4KHiitRyz9fpZi3d0SVhc1FrwvO1tq4zGndg4QtXoiIThe-hkp7CjGjPDnRsdMFHsxidbJ5GpxvgPOzbCSSkc0_JM5BaU6-jVWNWPlaxFi4keediNjWtrjkB8w5I1bnq1Js-EMVXZ6R3NgHgHMfUGxNYQpfL1fmig%26u%3daHR0cHMlM2ElMmYlMmZ3d3cudWRlbXkuY29tJTJmY291cnNlJTJmMTAtZGF5cy1vZi1taW5kZnVsbmVzcy1taW5kZnVsLXdpdGgtbWFydGluZSUyZiUzZnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX21lZGl1bSUzZHVkZW15YWRzJTI2dXRtX2NhbXBhaWduJTNkQkctU2VhcmNoX0RTQV9HYW1tYUNhdGNoYWxsX05vblBfbGEuRU5fY2MuSW5kaWElMjZjYW1wYWlnbnR5cGUlM2RTZWFyY2glMjZwb3J0Zm9saW8lM2RCaW5nLUluZGlhJTI2bGFuZ3VhZ2UlM2RFTiUyNnByb2R1Y3QlM2RDb3Vyc2UlMjZ0ZXN0JTNkJTI2YXVkaWVuY2UlM2REU0ElMjZ0b3BpYyUzZCUyNnByaW9yaXR5JTNkR2FtbWElMjZ1dG1fY29udGVudCUzZGRlYWw0NTg0JTI2dXRtX3Rlcm0lM2RfLl9hZ18xMzE2MTE3ODA2NjgxNjM1Xy5fYWRfXy5fa3dfdWRlbXlfLl9kZV9jXy5fZG1fXy5fcGxfXy5fdGlfZGF0LTIzMzQwNTcwMjc5ODM1MjklM2Fsb2MtOTBfLl9saV8xNDg3NTJfLl9wZF9fLl8lMjZtYXRjaHR5cGUlM2RiJTI2bXNjbGtpZCUzZGJhMzA1Nzk5ZTliODE1MjMxNDkwMzBkMTBmYzg3YTU2%26rlid%3dba305799e9b81523149030d10fc87a56/RK=2/RS=Ep6Fmy25hbPhK0oWaXcJtgbB60U-;_ylt=AwrKFZ5w5khnTAIAkD67HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA292LXRvcA--;_ylc=X3IDMgRydAMw?IG=0aca159ee04e44f28b00e18f499508ad">Read More</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <h2>Need Help?</h2>
+        <p>If you're struggling, don't wait. Get the support you need today.</p>
+        <a href="https://r.search.yahoo.com/_ylt=AwrKAjHZ6khnSgIAFtO7HAx.;_ylu=Y29sbwNzZzMEcG9zAzcEdnRpZAMEc2VjA3Ny/RV=2/RE=1734041562/RO=10/RU=https%3a%2f%2fwww.psychiatry.org%2fpsychiatrists%2finternational%2fglobal-mental-health/RK=2/RS=_5HvxgR3skE55XQyv0aFBCB83pA-" class="cta-button">Contact a Specialist</a>
+    </section>
+
+    <!-- Footer Section -->
+{% endblock body %}
+
